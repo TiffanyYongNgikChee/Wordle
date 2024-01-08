@@ -8,8 +8,14 @@
 
     <ShellContent
         Title="Home"
+        ContentTemplate="{DataTemplate local:WelcomePage}"
+        Route="WelcomePage" />
+    <ShellContent
+        Title="Wordle"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+    
 
 </Shell>
 

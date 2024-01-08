@@ -1,25 +1,38 @@
-﻿namespace Wordle;
+﻿using Wordle.ViewModel;
+
+namespace Wordle;
 
 public partial class MainPage : ContentPage
 {
-	int count = 0;
+    private string SaveFilePath => System.IO.Path.Combine(FileSystem.Current.AppDataDirectory, "savefile.txt");
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+    public MainPage()
+    {
+        InitializeComponent();
+        BindingContext = new GameViewModel();
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+        var frame = new Frame();
+    }
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+    private async void btnHelp_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Help());
+    }
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+    private async void btnStats_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new StatsView());
+    }
+
+    private async void btnSetting_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new Setting());
+    }
+
+    private void btnNewGame_Clicked(object sender, EventArgs e)
+    {
+        (BindingContext as GameViewModel)?.ResetGame();
+    }
 }
 
 

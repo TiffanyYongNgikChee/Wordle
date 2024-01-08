@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wordle.WelcomePage"
+             Title="WelcomePage"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <ContentPage.Resources>
+        <x:Double x:Key="gridFont">15</x:Double>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <StackLayout Spacing="20" Padding="20">
+            <!-- Welcome Message -->
+            <Label Text="Welcome to Wordle"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   FontSize="30" 
+                   TextColor="#3498db" />
+
+            <!-- Welcome Image -->
+            <Image Source="wordle.png"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"
+                   HeightRequest="250"/>
+
+            <!-- Instruction -->
+           <Label FontSize="20" Text="Please enter your name" TextColor="#2c3e50" FontAttributes="Bold" HorizontalTextAlignment="Center"  Margin="0,10,0,0" LineBreakMode="WordWrap"/>
+
+            <!-- Player Entry Grid -->
+            <Grid x:Name="PlayerNameGrid" RowDefinitions="Auto" ColumnDefinitions="Auto, Auto, *">
+              <Entry x:Name="player1" MinimumWidthRequest="50" FontSize="14" Placeholder="Enter Name" Grid.Row="0" Grid.Column="2"/>
+            </Grid>
+
+            <!-- Start Game Button -->
+            <Button x:Name="PlayGame"
+                    Text="Start"
+                    Clicked="OnGoToMainPageClicked"
+                    BackgroundColor="#3498db"
+                    TextColor="White"
+                    FontSize="20"
+                    CornerRadius="10"
+                    Margin="10"
+                    VerticalOptions="Center" />
+
+            <!-- Help Button -->
+            <Button x:Name="btnHelp" 
+                    Text="Help" 
+                    Clicked="btnHelp_Clicked"
+                    FontSize="Large"
+                    Padding="15,0,15,5"
+                    BackgroundColor="#6aaa64"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"/>
+
+            <!-- Settings Button -->
+            <Button x:Name="btnStats"
+                    Text="Statistics"
+                    Clicked="btnStats_Clicked"
+                    FontSize="Large"
+                    Padding="15,0,15,5"
+                    BackgroundColor="#6aaa64"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="Center"/>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

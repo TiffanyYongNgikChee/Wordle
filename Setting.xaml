@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wordle.Setting"
+             Title="Setting"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <VerticalStackLayout Margin="10" WidthRequest="300" HeightRequest="230" VerticalOptions="Center" HorizontalOptions="Center">
+        <Label 
+            Text="SETTINGS"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            TextColor="#b09d9d"
+            FontSize="Small"
+            FontFamily="DroidSerifRegular"
+            Margin="0, 30, 0, 0"
+            FontAttributes="Bold"/>
+        <HorizontalStackLayout HorizontalOptions="Center" VerticalOptions="Center" Margin="0,15,0,0">
+            <Label 
+                Text="Dark Mode"
+                FontSize="Medium"
+                FontFamily="DroidSerifRegular"
+                TextColor="#b09d9d" 
+                Margin="10, 10, 10, 0"/>
+            <Switch 
+                x:Name="darkMode_switch" 
+                HorizontalOptions="End" 
+                OnColor="Grey"
+                ThumbColor="DarkGrey"
+                Margin="20,3,10,0"
+                IsToggled="{DynamicResource IsDarkMode}"
+                Toggled="darkMode_switch_Toggled"/>
+        </HorizontalStackLayout>
+
+    </VerticalStackLayout>
+</ContentPage>

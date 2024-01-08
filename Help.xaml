@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Wordle.Help"
+             Title="How to play?"
+             BackgroundColor="{DynamicResource BackgroundColor}">
+
+    <Grid RowDefinitions="20, 50, 50, 50, 100, 50, 50, 50, *">
+        <Label Grid.Row="1"
+            Text="Guess the WORDLE in six tries!"
+            VerticalOptions="Start" 
+            HorizontalOptions="Center"
+               TextColor="#b5a1a1"/>
+        <Label Grid.Row="2"
+            Text="Each guess must be a valid 5 letter word. Hit the enter button to submit."  
+            VerticalOptions="Start"
+            HorizontalOptions="Center"
+               TextColor="#b5a1a1"/>
+        <Label Grid.Row="3"
+            Text="After each guess, the color of the tiles will change to show how close your guess was to the word. Example:"
+            HorizontalOptions="Start"
+            VerticalOptions="Center"
+               TextColor="#b5a1a1"/>
+
+        <VerticalStackLayout
+            Spacing="8"
+            Grid.Row="4"
+            HorizontalOptions="Center">
+            <HorizontalStackLayout
+                Spacing="8">
+                <Frame Style="{DynamicResource LetterFrame}"
+                       BackgroundColor="#6aaa64">
+                    <Label Text="D"
+                           FontSize="36"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="White"/>
+                </Frame>
+                <Frame Style="{DynamicResource LetterFrame}"
+                       BackgroundColor="#c9b458">
+                    <Label Text="A"
+                           FontSize="36"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="White"/>
+                </Frame>
+                <Frame Style="{DynamicResource LetterFrame}"
+                       BackgroundColor="#212121">
+                    <Label Text="N"
+                           FontSize="36"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="White"/>
+                </Frame>
+                <Frame Style="{DynamicResource LetterFrame}"
+                       BackgroundColor="#212121">
+                    <Label Text="C"
+                           FontSize="36"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="White"/>
+                </Frame>
+                <Frame Style="{DynamicResource LetterFrame}"
+                       BackgroundColor="#212121">
+                    <Label Text="E"
+                           FontSize="36"
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center"
+                           TextColor="White"/>
+                </Frame>
+                
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+        <Label Grid.Row="5" 
+               Text="The letter D is in the word and in the correct spot."
+               HorizontalOptions="Center"
+               TextColor="#b5a1a1"/>
+        <Label Grid.Row="6" 
+               Text="The letter A is in the word but is in the wrong spot."
+               HorizontalOptions="Center"
+               TextColor="#b5a1a1"/>
+        <Label Grid.Row="7" 
+               Text="The other letters are not in the word in any spot."
+               HorizontalOptions="Center"
+               TextColor="#b5a1a1"/>
+    </Grid>
+</ContentPage>

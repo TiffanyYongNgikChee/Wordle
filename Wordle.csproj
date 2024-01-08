@@ -53,6 +53,21 @@
 
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <None Remove="Model\" />
+	  <None Remove="ViewModel\" />
+	  <None Remove="Resources\Images\settings_icon.svg" />
+	  <None Remove="Resources\Images\wordle.svg" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="Model\" />
+	  <Folder Include="ViewModel\" />
+	</ItemGroup>
+	<ItemGroup>
+	  <BundleResource Include="Resources\Images\settings_icon.svg" />
+	  <BundleResource Include="Resources\Images\wordle.svg" />
+	</ItemGroup>
 </Project>
