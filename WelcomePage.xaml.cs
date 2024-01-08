@@ -1,6 +1,4 @@
-﻿using AndroidX.ConstraintLayout.Helper.Widget;
-
-namespace Wordle;
+﻿namespace Wordle;
 
 public partial class WelcomePage : ContentPage
 {
