@@ -49,7 +49,7 @@ namespace Wordle.ViewModel
             GetWordsFromVM();
 
             chosenWord = PickWordFromList();
-            correctAnswer = chosenWord.ToCharArray();
+            //correctAnswer = chosenWord.ToCharArray();
 
             rows = new Row[6]
             {
